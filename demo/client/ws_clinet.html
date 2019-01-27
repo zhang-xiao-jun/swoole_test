@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>websocket连接测试</h1>
+</body>
+
+<script>
+    //ws服务端的地址
+    var wsUrl = "ws://0.0.0.0:9501";
+
+    //实例化ws对象
+    var websocket = new websocket(wsUrl);
+
+    //onopen属性
+    websocket.onopen = function (evt) {
+        console.log('server-hand-connected-success');
+    }
+
+    //onmessage
+    websocket.onmessage = function (evt) {
+        console.log('server-data:'+evt.data);
+    }
+
+    //onclose
+    websocket.onclose = function (evt) {
+        console.log('server-close-success');
+    }
+</script>
+</html>
